@@ -2,13 +2,6 @@
 power.directory <- "C:/github/ExData_Plotting1"
 setwd(power.directory)
 
-## ------ if you need to extract the file, run the following code
-## ------ Begin: Extract ------------------------------------------------------------------
-## fileURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
-## download.file(fileURL, destfile = "./EPC.zip")
-## unzip("EPC.zip")
-## ------ End: Extract --------------------------------------------------------------------
-
 # read from source file 
 power.class <- c(rep("character",2),rep("numeric",7))
 power.data <- read.table("household_power_consumption.txt",header=TRUE,
@@ -28,8 +21,10 @@ power.columns <- c("Date","Time","GlobalActivePower","GlobalReactivePower","Volt
 colnames(power.data) <- power.columns
 
 # setup the png file and create graphic
-png(filename="./plot1.png",width=480,height=480,units="px")
-hist(power.data$GlobalActivePower,main="Global Active Power",xlab="Global Active Power (kilowatts)",col="red")
+png(filename="./plot2.png",width=480,height=480,units="px",bg="white")
+par(mar=c(8,8,7,6))
+plot(power.data$Datetime, power.data$GlobalActivePower, type="l",
+    xlab="", ylab="Global Active Power (kilowatts)" )
 
 ## clean up the memory and close off the graphic device
 bb <- rm(list=ls())
