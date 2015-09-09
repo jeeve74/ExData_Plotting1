@@ -2,13 +2,6 @@
 power.directory <- "C:/github/ExData_Plotting1"
 setwd(power.directory)
 
-## ------ if you need to extract the file, run the following code
-## ------ Begin: Extract ------------------------------------------------------------------
-## fileURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
-## download.file(fileURL, destfile = "./EPC.zip")
-## unzip("EPC.zip")
-## ------ End: Extract --------------------------------------------------------------------
-
 # read from source file 
 power.class <- c(rep("character",2),rep("numeric",7))
 power.data <- read.table("household_power_consumption.txt",header=TRUE,
