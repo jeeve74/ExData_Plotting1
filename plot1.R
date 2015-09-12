@@ -2,7 +2,7 @@
 power.directory <- "C:/github/ExData_Plotting1"
 setwd(power.directory)
 
-# read from source file 
+ # read from source file 
 power.class <- c(rep("character",2),rep("numeric",7))
 power.data <- read.table("household_power_consumption.txt",header=TRUE,
         sep=";",na.strings="?",colClasses=power.class)
